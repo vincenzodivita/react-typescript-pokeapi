@@ -36,11 +36,12 @@ const List: React.FC = () => {
     <div>
       <h1>Lista Pokémon di Kanto</h1>
       <ul>
-        {pokemonList.map((pokemon) => (
-          <li key={pokemon.id}>#{pokemon.id} {pokemon.name}</li>
-        ))}
-        <Card />
-      </ul>
+      {pokemonList.map((pokemon) => (
+        <li key={pokemon.id}>
+          <Card id={pokemon.id} name={pokemon.name} url={pokemon.url} />
+        </li>
+      ))}
+    </ul>
     </div>
   );
 };
