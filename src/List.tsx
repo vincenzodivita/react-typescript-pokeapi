@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
 interface Pokemon {
+  id: number;
   name: string;
   url: string;
-  id: string;
 }
 
 const List: React.FC = () => {
   const [pokemonList, setPokemonList] = useState<Pokemon[]>([]);
-  pokemonList.map((pokemon) => {pokemon.id = pokemon.url.slice(34,-1); pokemon.name = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)});
+  pokemonList.map((pokemon) => {
+    pokemon.id = parseInt(pokemon.url.slice(34,-1));
+    pokemon.name = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)});
 
   useEffect(() => {
     const fetchPokemon = async () => {
