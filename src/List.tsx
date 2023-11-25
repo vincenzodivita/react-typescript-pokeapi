@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Card from './Card.tsx'
 
 interface Pokemon {
   id: number;
@@ -38,6 +39,7 @@ const List: React.FC = () => {
         {pokemonList.map((pokemon) => (
           <li key={pokemon.id}>#{pokemon.id} {pokemon.name}</li>
         ))}
+        <Card />
       </ul>
     </div>
   );
